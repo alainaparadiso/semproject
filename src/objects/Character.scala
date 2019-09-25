@@ -27,7 +27,7 @@ class Character(var attack: Int, var defense: Int, var magAttack: Int, var magDe
 
   /** will check if a character has enough exp to level up, and will spend the exp points if able to */
   def levelUp(): Unit = {
-    if (experience >= levelCutoff){
+    while (experience >= levelCutoff) {
       level += 1
       experience -= levelCutoff
       if (level % 2 == 0) {
