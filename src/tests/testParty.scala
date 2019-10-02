@@ -1,4 +1,4 @@
-package tests
+/**package tests
 
 import org.scalatest.FunSuite
 import objects.Character
@@ -42,3 +42,4 @@ class testParty extends FunSuite {
     assert(opal.experience == 1)
   }
 }
+*/

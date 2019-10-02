@@ -1,4 +1,4 @@
-package tests
+/**package tests
 
 import org.scalatest.FunSuite
 import objects.Character
@@ -28,3 +28,4 @@ class testDamage extends FunSuite{
     assert(char1.dead == true)
   }
 }
+ */

@@ -1,4 +1,4 @@
-package tests
+/**package tests
 
 import org.scalatest.FunSuite
 import objects.Character
@@ -36,3 +36,4 @@ class testExperience extends FunSuite {
   }
 
 }
+*/

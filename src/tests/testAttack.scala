@@ -1,4 +1,4 @@
-package tests
+/**package tests
 
 import org.scalatest.FunSuite
 import objects.Character
@@ -25,3 +25,4 @@ class testAttack extends FunSuite {
     assert(char1.curHealth == 100)
   }
 }
+*/

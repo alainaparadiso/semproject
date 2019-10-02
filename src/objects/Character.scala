@@ -1,6 +1,6 @@
 package objects
 
-class Character(var attack: Int, var defense: Int, var magAttack: Int, var magDefense: Int, var maxHealth: Int, var maxMagic: Int) {
+abstract class Character(val name: String, var attack: Int, var defense: Int, var magAttack: Int, var magDefense: Int, var maxHealth: Int, var maxMagic: Int) {
   var curHealth: Int = maxHealth
   var curMagic: Int = maxMagic
   var dead: Boolean = false
@@ -46,16 +46,16 @@ class Character(var attack: Int, var defense: Int, var magAttack: Int, var magDe
 
   /** will execute a physical attack where this player is being attacked by the otherChar */
   def physicalAttack(otherChar: Character): Unit = {
-    val damage: Int = otherChar.attack - this.defense
+    val damage: Int = this.attack - otherChar.defense
 
     if (damage >= 0) {
-      this.takeDamage(damage)
+      otherChar.takeDamage(damage)
     }
   }
 
   /** will execute a magic attack where this player is being attacked by otherChar and will spend magic to do so */
   def magicAttack(otherChar: Character): Unit = {
-    val damage: Int = otherChar.magAttack - this.magDefense
+    val damage: Int = this.magAttack - otherChar.magDefense
 
     if (damage >= 0) {
       if (otherChar.curMagic >= damage) {
@@ -66,4 +66,5 @@ class Character(var attack: Int, var defense: Int, var magAttack: Int, var magDe
     }
   }
 
+  def takeAction(action: String, otherChar:Character): Unit
 }
